@@ -27,7 +27,7 @@ def send_chat_message(prompt, gid, question):
         }
     try:
         # HTTP POST 요청 보내기
-        response = requests.post(api_server, data=payload, headers=headers)
+        response = requests.post(api_server, json=payload, headers=headers)
         
         # 요청이 성공했는지 확인
         response.raise_for_status()  # 상태 코드가 200번대가 아니면 예외 발생

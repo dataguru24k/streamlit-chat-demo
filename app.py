@@ -36,8 +36,8 @@ def send_chat_message(prompt, gid, question):
         response_body = response.json()  # response.json()으로 응답을 JSON으로 파싱
 
         # body 안의 message만 추출
-        body = json.loads(response_body['body'])
-        message = body.get('message')
+        # body = json.loads(response_body['body'])
+        message = response_body.get('message', "No message received.")
         
         return message
 

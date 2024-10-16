@@ -8,13 +8,19 @@ def send_chat_message(prompt, gid, question):
     
     import json
     
-    payload = json.dumps({
-        "body": json.dumps({
-            "prompt": prompt,
-            "question": question,
-            "gid": gid
-        })
-    })
+    # payload = json.dumps({
+    #     "body": json.dumps({
+    #         "prompt": prompt,
+    #         "question": question,
+    #         "gid": gid
+    #     })
+    # })
+
+    payload = {
+        "prompt": prompt,
+        "question": question,
+        "goodsId": gid
+    }
     headers = {
         "Accept": "text/plain",
         "Content-Type": "application/json"
